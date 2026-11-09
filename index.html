@@ -1,0 +1,182 @@
+<html>
+<head>
+<script>
+element_left = {"bt1":0}
+
+function run_away(element){
+    element.style.transform = `translatey(${element_left[element.id]-70}px)`
+    element_left[element.id]-=70
+}
+
+function next_qbox(){
+    let scrollingarea = document.getElementById("scrollingarea")
+}
+
+window.onload = ()=>{
+    document.getElementById("bt1").onclick = ()=>{run_away(document.getElementById("bt1"))}
+}
+</script>
+<style>
+@keyframes fade{
+    from{ opacity: 0%;}
+    to{opacity: 100%;}
+}
+
+@font-face {
+    font-family: badkhat;
+    src: url(badkhat.ttf);
+}
+
+body{
+    background-image: url('bg.jpeg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: repeat repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    scrollbar-width: none;
+    font-family: badkhat;
+    color: white;
+    user-select: none;
+}
+
+#scrollingarea{
+    overflow: hidden;
+    width: 400px;
+    height: 400px;
+    padding: 5px;
+    border-radius: 10px;
+    border: solid 3px rgb(255, 204, 156);
+    box-shadow: 0 0 10px 5px rgb(255, 179, 107);
+    scrollbar-width: none;
+}
+
+.questionbox{
+    width: 100%;
+    height: 400px;
+    background-color: rgba(0,0,0,0.3);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.questionbox:first-child{
+    margin-top: 0px;
+}
+
+
+.scrollfaded{
+    opacity: 0%;
+    animation: fade 1600ms forwards;
+    timeline-trigger: --trigger view() entry 100% exit 0%;
+    animation-trigger: --trigger play-forwards play-backwards;
+}
+
+
+.nextbutton{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    background-image: linear-gradient(to top right, #23125c, #f87653);
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 20;
+    margin: 5px;
+}
+.runningawaybutton{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 20;
+    margin: 5px;
+}
+.buttonsdiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+div,p,img,button,input,a,b,h1,h2,h3,h4,span{
+    transition: all 500ms ease-in-out;
+    font-family: badkhat;
+}
+</style>
+</head>
+<body>
+<meta name="viewport" content="initial-scale=1.0,width=device-width">
+
+<div id="scrollingarea">
+    <div class="questionbox">
+        <h1>خب سلام سلاممممممم</h1>
+        <h3>شبنم خانوم من از بچگیم همینطوری دست خطم بد بود تحمل کن</h3>
+        <h2>بزن رو دکمه بعدی تا باهم پیش بریم<br>دختر خوبی هم باش مقاومت نکن🫠</h2>
+        <button class="nextbutton" onclick="document.getElementById(`pg2`).scrollIntoView({behavior:`smooth`,block:`center`})">بریم!</button>
+    </div>
+    <div id="pg2" class="questionbox scrollfaded">
+        <h1>اول از همه قول بده که دیگه دعوام نکنی😭💔</h1>
+        <div class="buttonsdiv">
+            <button class="nextbutton" onclick="document.getElementById(`pg3`).scrollIntoView({behavior:`smooth`,block:`center`})">باشه عزیزم🎀</button>
+            <button class="runningawaybutton" id="bt1">نخیر گمشو🔴</button>
+        </div>
+    </div>
+    <div id="pg3" class="questionbox scrollfaded">
+        <h1>و دوم اینکه</h1>
+        <h3>میشه بعد این بریم بازی؟👉🏻👈🏻</h3>
+        <div class="buttonsdiv">
+            <button class="nextbutton" onclick="document.getElementById(`pg4`).scrollIntoView({behavior:`smooth`,block:`center`})">
+                باشه خاک تو سرت🤦🏻
+            </button>
+        </div>
+    </div>
+    <div id="pg4" class="questionbox scrollfaded">
+        <h1>و سوال بعدیم</h1>
+        <h3>ببین عزیزم ما خیلی وقته همو میشناسیم</h3>
+        <h4>پس فقط ازت میخوام دوباره مثل قبل باهم حرف بزنیم :)</h4>
+        <h4>تا بعدا بفهمیم چه خاکی تو سرمون باید بریزیم🤦🏻</h4>
+        <div class="buttonsdiv">
+            <button class="nextbutton" onclick="document.getElementById(`pg5`).scrollIntoView({behavior:`smooth`,block:`center`})">خیلی خری🫏</button>
+            <button class="nextbutton" onclick="document.getElementById(`pg5`).scrollIntoView({behavior:`smooth`,block:`center`})">خیلی گاوی🐄</button>
+            <button class="nextbutton" onclick="document.getElementById(`pg5`).scrollIntoView({behavior:`smooth`,block:`center`})">خیلی گوسفندی🐑</button>
+        </div>
+    </div>
+    <div id="pg5" class="questionbox scrollfaded">
+        <h2>هر سه تاشون خودتی گوزو</h2>
+        <h1>درضمن!</h1>
+        <h4>اگه دوس داشتی بازم رو این موضوع فکر کن بعد جواب بده</h4>
+        <button class="nextbutton" onclick="document.getElementById(`pg6`).scrollIntoView({behavior:`smooth`,block:`center`})">ببینم چی میشه🗿</button>
+    </div>
+    <div id="pg6" class="questionbox scrollfaded">
+        <h1>و اما سوال آخر</h1>
+        <h3>میشه هردومون همچیو فراموش کنیم و بذاریم کنار</h3>
+        <h3>و عین بچه ادم کنار هم بمونیم؟🎀</h3>
+        <div class="buttonsdiv">
+            <button class="nextbutton" onclick="document.getElementById(`pg7`).scrollIntoView({behavior:`smooth`,block:`center`})">❤️‍🩹بله</button>
+            <button class="nextbutton" id="bt2" onclick="document.getElementById('bt2').innerHTML = 'عروس خانوم بله رو بده دیگه😭';navigator.clipboard.writeText('آقا دانیال بیا بغلم :)')">خیر💔</button>
+        </div>
+    </div>
+    <div id="pg7" class="questionbox scrollfaded">
+        <h1>گیلیلیلیلیلیلیلیلیلیلیلی!!!!!!!!</h1>
+        <h2>ذوقققققققققق😭😭😭😭</h2>
+        <h4>حالا یچیز جالب</h4>
+        <h2>یه متن همین الان برات کپی شده!<br>متن کپی شده رو بفرست پیویم</h2>
+    </div>
+</div>
+
+</body>
+</html>
